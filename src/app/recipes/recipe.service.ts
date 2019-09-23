@@ -9,17 +9,17 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe(
-            'A Test Recipe 1',
-            'This is simply a test',
-            'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/nachos_92445_16x9.jpg',
+            'Burger KING',
+            'This is a burger.',
+            'https://herfybd.com/assets/image/combo_cheese_burger.png',
             [
                 new Ingredient('Meat', 1),
                 new Ingredient('French Fries', 20)
             ]),
         new Recipe(
-            'A Test Recipe 2',
-            'This test test',
-            'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/nachos_92445_16x9.jpg',
+            'Pizza',
+            'Pizza Italiana',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG2v_jQepbRd1ab05IGvSS7MUYZ0DTrupUoNbEBfGoDtb7b8Ch',
             [
                 new Ingredient('Buns', 2),
                 new Ingredient('Meat', 1)
@@ -33,5 +33,9 @@ export class RecipeService {
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.shoppingListService.addIngredients(ingredients);
+    }
+
+    getRecipe(index: number) {
+        return this.recipes[index];
     }
 }
