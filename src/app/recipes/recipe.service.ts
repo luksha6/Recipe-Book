@@ -8,7 +8,7 @@ import {Subject} from "rxjs";
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
 
-    private recipes: Recipe[] = [
+   /* private recipes: Recipe[] = [
         new Recipe(
             'Burger KING',
             'This is a burger.',
@@ -25,8 +25,15 @@ export class RecipeService {
                 new Ingredient('Buns', 2),
                 new Ingredient('Meat', 1)
             ])
-    ];
+    ]; */
+    private recipes: Recipe[] = [];
+
     constructor(private shoppingListService: ShoppingListService) {}
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
 
     getRecipes() {
         return this.recipes.slice(); // vrati kopiju arraya i vraca da ne mozemo mjenjati u getteru
