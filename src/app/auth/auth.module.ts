@@ -10,7 +10,7 @@ import {FormsModule} from "@angular/forms";
     ],
     imports: [
         RouterModule.forChild([
-            {path: 'auth', component: AuthComponent},
+            {path: '', component: AuthComponent},
         ]),
         SharedModule,
         FormsModule
